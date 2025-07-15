@@ -21,7 +21,7 @@ public class App {
     // Se achar necessário, você pode criar novas classes ...
 
     /*
-    Construtor da App: processa o arquivo de configuração das classes de atendimento. Esse arquivo é um recurso chamado classes.csv.
+    Construtor da App: processa os arquivos de dados do GeoLite
     @throws            Dispara uma exceção InvalidParameterException se não puder ler o arquivo, ou seu conteúdo for inválido
      */
     public App() {
@@ -41,7 +41,7 @@ public class App {
     public Localidade busca_localidade(String ip) {
         // implemente aqui a busca da localidade a partir do endereço IP
 
-        return null;
+        return new Localidade("BR", "Pindorama");
     }
 
 }

@@ -33,11 +33,9 @@ public class EsdController {
 
         Localidade local = app.busca_localidade(ip);
         if (local == null) {
-            try {
-                result = ResponseEntity.ok(app.busca_localidade(ip));
-            } catch (Exception e) {
-                result = ResponseEntity.status(HttpStatus.BAD_REQUEST).body(null);
-            }
+            result = ResponseEntity.status(HttpStatus.BAD_REQUEST).body(null);
+        } else {
+            result = ResponseEntity.ok(app.busca_localidade(ip));
         }
         return result;
     }
