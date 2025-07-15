@@ -21,6 +21,19 @@ Você pode criar novas classes que achar necessárias, as quais devem ficar na p
 
 Coloque suas estruturas de dados na package _esd_ (_src/java/main/esd_). 
 
+## Os arquivos de dados GeoLite
+
+Os arquivos GeoLite devem ser copiados para a pasta _src/main/resources_. Certifique-se de que os seguintes arquivos estão lá:
+* GeoLite2-City-Blocks-IPv4.csv
+* GeoLite2-City-Locations-pt-BR.csv
+
+Maiores informações sobre os conteúdos desses arquivos podem ser obtidas na [descrição do projeto](https://moodle.ifsc.edu.br/mod/page/view.php?id=257580).
+
+**ATENÇÃO**: como esses arquivos são muito grandes, não é possível armazená-los no github !
+
+O seguinte arquivo compactado contém esses arquivos de dados:
+* [GeoLite Database](https://moodle.ifsc.edu.br/pluginfile.php/550385/mod_page/content/55/geoip.tgz)
+
 ## Testando seu geolocalizador
 
 Para testar seu programa, execute-o e então acesse o seguinte link:
