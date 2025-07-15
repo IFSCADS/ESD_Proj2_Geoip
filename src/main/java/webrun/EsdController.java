@@ -2,7 +2,6 @@ package webrun;
 
 import app.Localidade;
 import jakarta.servlet.http.HttpServletRequest;
-import jakarta.servlet.http.HttpServletResponse;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -12,7 +11,7 @@ import app.App;
 @RestController
 public class EsdController {
 
-    private App app = new App();
+    private final App app = new App();
 
     String get_remote_ip(HttpServletRequest request) {
         String ipAddress = request.getHeader("X-Forwarded-For");
@@ -30,7 +29,7 @@ public class EsdController {
     }
 
     ResponseEntity<Localidade> busca_local(String ip) {
-        ResponseEntity<Localidade> result;
+        ResponseEntity<Localidade> result = null;
 
         Localidade local = app.busca_localidade(ip);
         if (local == null) {
@@ -39,9 +38,8 @@ public class EsdController {
             } catch (Exception e) {
                 result = ResponseEntity.status(HttpStatus.BAD_REQUEST).body(null);
             }
-
-            return result;
         }
+        return result;
     }
 
     @GetMapping("/geoip")

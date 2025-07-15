@@ -1,7 +1,5 @@
 package app;
 
-import esd.ListaSequencial;
-
 import java.io.*;
 
 /*
